@@ -7,14 +7,11 @@ Data is ingested from Twitter API, then moved to S3 bucket, and then transformed
 ![Data architecture](./img/pipeline.png)
 
 ### Prerequisite
-1. You will need:
--   [Twitter Developer](https://developer.twitter.com/) account (free)
--   [AWS](https://aws.amazon.com/) account (12-month free tier)
-
+1. You will need: [Twitter Developer](https://developer.twitter.com/) account and [AWS](https://aws.amazon.com/) account
 2. Add your AWS and Twitter keys
 3. Specify your AWS S3 bucket
 
 ### Future work
 - Set up Airflow ochestration
-- Create more data models: e.g., user table that is linked with ikea_tweets table by `user_id` foreign key
-- Create layers for data transformation: staging --> mart
+- Create more data models: e.g., table `users` that is linked with table `ikea_tweets` by  foreign key `user_id`
+- Create layers for data transformation: staging and mart layer
