@@ -50,6 +50,10 @@ def consumer():
 
 class JSONStreamProducer(tweepy.StreamListener):
 
+    @staticmethod
+    def on_connect():
+        print("Connected to the Twitter API now")
+
     def on_data(self, data):
         pipeline.put(data)
         if not event.is_set():
@@ -59,6 +63,7 @@ class JSONStreamProducer(tweepy.StreamListener):
 
     def on_error(self, status):
         print("Error: " + str(status))
+
 
 if __name__ == "__main__":
     consumer_key = sys.argv[1]
@@ -79,7 +84,8 @@ if __name__ == "__main__":
     t = threading.Thread(target=consumer)
 
     # Filter tweets with key words 'IKEA' or its variations
-    myStream.filter(track=["IKEA", "Ikea", "ikea"], is_async=True)
+    keywords = ["IKEA", "Ikea", "ikea"]
+    myStream.filter(track=keywords, is_async=True)
     t.start()
 
     time.sleep(900)
