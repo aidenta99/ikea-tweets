@@ -16,5 +16,5 @@ Data is ingested from Twitter API, then moved to S3 bucket, and then transformed
 
 ### Future work
 - Set up Airflow ochestration
-- Create more data models: e.g., user table that is linked with ikea_tweets table by `user_id` foreign key
-- Create layers for data transformation: staging --> mart
+- Create more data models: e.g., table `users` that is linked with table `ikea_tweets` by  foreign key `user_id`
+- Create layers for data transformation: staging and mart layer
