@@ -10,10 +10,11 @@ Data is ingested from Twitter API, then moved to S3 bucket, and then transformed
 2. Move data to S3 bucket, stored in JSON files
 3. Move the data to Postgres where data is stored in tables
 
-### Prerequisite
-1. You will need: [Twitter Developer](https://developer.twitter.com/) account and [AWS](https://aws.amazon.com/) account
-2. Add your AWS and Twitter keys
+### Steps
+1. Prerequisites: [Twitter Developer](https://developer.twitter.com/) account and [AWS](https://aws.amazon.com/) account
+2. Add your AWS and Twitter keys in `Dockerfile`
 3. Specify your AWS S3 bucket
+4. Build and run Docker image
 
 ### Future work
 - Set up Airflow ochestration
