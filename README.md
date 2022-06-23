@@ -7,10 +7,7 @@ Data is ingested from Twitter API, then moved to S3 bucket, and then transformed
 ![Data architecture](./img/pipeline.png)
 
 ### Prerequisite
-1. You will need:
--   [Twitter Developer](https://developer.twitter.com/) account (free)
--   [AWS](https://aws.amazon.com/) account (12-month free tier)
-
+1. You will need: [Twitter Developer](https://developer.twitter.com/) account and [AWS](https://aws.amazon.com/) account
 2. Add your AWS and Twitter keys
 3. Specify your AWS S3 bucket
 
