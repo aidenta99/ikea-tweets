@@ -17,6 +17,8 @@ import boto3
 import tweepy
 
 def consumer():
+# Create JSON files and upload them to S3 bucket
+
     tweet_list = []
     total_count = 0
     s3_client = boto3.client('s3')
@@ -76,6 +78,7 @@ if __name__ == "__main__":
 
     t = threading.Thread(target=consumer)
 
+    # Filter tweets with key words 'IKEA' or its variations
     myStream.filter(track=["IKEA", "Ikea", "ikea"], is_async=True)
     t.start()
 
