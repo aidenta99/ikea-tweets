@@ -1,6 +1,5 @@
 /*********************************************************************************
-Create storage (database) to store the tweets
-Create compute (warehouse) to run analytical queries on the tweets
+Create database to store the tweets
 *********************************************************************************/
 
 use role sysadmin;
