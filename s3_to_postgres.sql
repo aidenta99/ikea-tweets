@@ -25,8 +25,8 @@ select aws_s3.table_import_from_s3(
     'ikea_tweets', 
     'id, created_at, text, favorite_count, retweet_count, reply_count', 
     '(format json, header true)',
-    'tweets', 
-    'twitter_wh'
+    'twitter_db.public', 
+    'tweets'
 )
 
 /*********************************************************************************

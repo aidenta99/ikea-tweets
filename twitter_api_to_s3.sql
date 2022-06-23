@@ -11,19 +11,19 @@ create or replace warehouse twitter_wh
   auto_resume = true
   initially_suspended = true;
 
-CREATE OR REPLACE DATABASE twitter_db;
+create or replace database twitter_db;
 USE SCHEMA twitter_db.public;
 
 /*********************************************************************************
 Create external S3 stage pointing to the S3 buckets storing the tweets
 *********************************************************************************/
 
-CREATE or replace STAGE twitter_db.public.tweets
-    URL = 's3://my-twitter-bucket/'
-    CREDENTIALS = (AWS_KEY_ID = 'xxxxxxxxxxxxxxxxxxxx'
-    AWS_SECRET_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+create or replace STAGE twitter_db.public.tweets
+    url = 's3://my-twitter-bucket/'
+    credentials = (AWS_KEY_ID = 'xxxxxxxxxxxxxxxxxxxx'
+    aws_secret_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
     file_format=(type='JSON')
-    COMMENT = 'Tweets stored in S3';
+    comment = 'Tweets stored in S3';
 
 /*********************************************************************************
 Create new table for storing JSON data in native format into a VARIANT column
